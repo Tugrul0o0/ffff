@@ -334,7 +334,7 @@ body {
     text-align: center;
     min-height: 180px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 32px;
     transition: all 0.3s;
 }
 .gallery-placeholder:hover {
