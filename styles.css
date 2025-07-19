@@ -964,37 +964,33 @@ body {
     .navbar.open .nav-menu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
-        gap: 16px 10px;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 12px 8px;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 260px;
+        width: 240px;
         max-width: 96vw;
         min-width: 0;
         background: #1e293b;
         z-index: 120;
         box-shadow: 0 4px 24px #0002;
         border-radius: 18px;
-        padding: 18px 10px;
+        padding: 14px 8px;
         align-items: center;
         justify-items: center;
         animation: fadeInMenuBox 0.35s cubic-bezier(.39,.575,.565,1.000);
-    }
-    .nav-menu-ust { margin-bottom: 24px; }
-    .nav-menu-ust, .nav-menu-alt {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
+        height: auto;
+        min-height: 0;
     }
     .nav-link.nav-anim {
-        font-size: 1rem;
+        font-size: 0.97rem;
         padding: 8px 0;
         min-width: 0;
         width: 100%;
+        height: 38px;
+        line-height: 1.1;
         text-align: center;
         color: #fff;
         border-radius: 12px;
@@ -1005,7 +1001,9 @@ body {
         font-weight: 500;
         letter-spacing: 0.01em;
         border: 1.5px solid #23304a;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .nav-link.nav-anim:hover, .nav-link.nav-anim.active {
         background: #2563eb;
