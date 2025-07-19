@@ -323,36 +323,27 @@ body {
     background: none;
 }
 .gallery-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    height: 100%;
     text-align: center;
-    padding: 20px;
-    transition: all 0.3s;
-}
-.gallery-placeholder:hover {
-    background: linear-gradient(135deg, #1d4ed8, #1e40af);
-    transform: scale(1.05);
+    min-height: 180px;
 }
 .gallery-placeholder i {
+    display: block;
+    margin: 0 auto 12px auto;
     font-size: 2.5rem;
-    margin-bottom: 10px;
-    opacity: 0.8;
 }
 .gallery-placeholder h4 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-    font-weight: 600;
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 .gallery-placeholder p {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    line-height: 1.4;
+    margin: 0;
+    font-size: 1rem;
 }
 /* İletişim Bölümü */
 .contact {
@@ -537,25 +528,25 @@ body {
 
 /* Navbar link animasyonları ve font değişimi */
 .nav-link.nav-anim {
-    transition: color 0.2s, font-weight 0.2s, font-size 0.2s, background 0.2s, box-shadow 0.2s;
+    transition: color 0.2s, background 0.2s, box-shadow 0.2s;
     font-family: 'Poppins', sans-serif;
 }
 .nav-link.nav-anim:hover, .nav-link.nav-anim:focus {
     color: #fff;
     background: #2563eb;
-    font-weight: 700;
-    font-size: 1.08em;
-    border-radius: 8px;
     box-shadow: 0 2px 12px rgba(37,99,235,0.13);
-    text-shadow: 0 2px 8px #1d4ed8aa;
+    text-shadow: none;
+    font-weight: 500;
+    font-size: 1em;
+    border-radius: 8px;
 }
 .nav-link.nav-anim.active {
     color: #fff;
     background: #1d4ed8;
-    font-weight: 700;
-    font-size: 1.1em;
-    border-radius: 10px;
     box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+    font-weight: 500;
+    font-size: 1em;
+    border-radius: 10px;
 }
 
 /* Fade-in ve slide-up animasyonları daha belirgin */
