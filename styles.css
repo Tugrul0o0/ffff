@@ -633,6 +633,27 @@ body {
     .contact-content { flex-direction: column; gap: 20px; }
     .footer-content { flex-direction: column; gap: 20px; align-items: flex-start; }
 }
+@media (min-width: 601px) {
+    .hero-title { font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 10px; }
+    .hero-subtitle { color: #6b7280; margin-bottom: 30px; font-size: 1.15rem; font-weight: 400; text-shadow: none; }
+    .hero-buttons { display: flex; gap: 20px; margin-bottom: 30px; }
+    .btn { font-size: 16px; padding: 12px 24px; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 30px; }
+    .stat-item { text-align: center; }
+    .stat-number { font-size: 2rem; font-weight: 700; color: #2563eb; }
+    .stat-label { color: #6b7280; font-size: 1rem; }
+}
+@media (max-width: 600px) {
+    .hero-title { font-size: 1.3rem; margin-bottom: 8px; }
+    .hero-subtitle { color: #fff; text-shadow: 0 2px 12px #222b, 0 1px 2px #000a; font-size: 1rem; margin-bottom: 16px; }
+    .hero-buttons { flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .btn { font-size: 0.98rem; padding: 10px 0; width: 100%; }
+    .hero-stats { flex-direction: column; align-items: center; gap: 0; margin-top: 12px; }
+    .hero-stats-row { flex-direction: row; justify-content: center; gap: 18px; width: 100%; }
+    .stat-item { text-align: center; min-width: 70px; }
+    .stat-number { font-size: 1.1rem; }
+    .stat-label { font-size: 0.95rem; }
+}
 @media (max-width: 600px) {
     .nav-container { flex-direction: row; height: 54px; padding: 0 8px; }
     .nav-logo { font-size: 1.1rem; gap: 6px; }
@@ -907,14 +928,16 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90vw;
-        max-width: 320px;
-        background: #1e293b;
+        max-width: 260px;
+        min-height: 220px;
+        background: transparent;
         z-index: 120;
-        box-shadow: 0 8px 32px #0003;
-        border-radius: 18px;
-        padding: 32px 0 18px 0;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
         align-items: center;
-        gap: 6px;
+        gap: 12px;
+        margin-top: 0;
         animation: fadeInMenuBox 0.35s cubic-bezier(.39,.575,.565,1.000);
     }
     @keyframes fadeInMenuBox {
@@ -922,26 +945,28 @@ body {
         to { opacity: 1; transform: translate(-50%, -50%); }
     }
     .nav-link.nav-anim {
-        font-size: 1.05rem;
-        padding: 10px 0;
+        font-size: 1rem;
+        padding: 12px 0;
         width: 90%;
         text-align: center;
         color: #fff;
-        border-radius: 10px;
-        transition: background 0.2s, color 0.2s;
+        border-radius: 16px;
+        background: #1e293b;
+        box-shadow: 0 2px 12px #0005;
+        margin: 0 auto;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        margin-bottom: 2px;
     }
     .nav-link.nav-anim:hover, .nav-link.nav-anim.active {
         background: #2563eb;
         color: #fff;
+        box-shadow: 0 4px 18px #2563eb33;
     }
     /* Menü overlay */
     .navbar.open::after {
-        content: '';
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(30,41,59,0.45);
-        z-index: 110;
-        pointer-events: all;
+        display: none;
     }
     .hamburger { position: absolute; right: 16px; top: 12px; }
     /* Hamburger menü kutusu tam ortada ve navbar'a sabit gibi */
