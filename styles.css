@@ -962,22 +962,24 @@ body {
         display: none;
     }
     .navbar.open .nav-menu {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 16px 10px;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 260px;
+        max-width: 96vw;
         min-width: 0;
-        width: 210px;
-        max-width: 90vw;
         background: #1e293b;
         z-index: 120;
         box-shadow: 0 4px 24px #0002;
         border-radius: 18px;
-        padding: 16px 0;
+        padding: 18px 10px;
         align-items: center;
-        gap: 0;
+        justify-items: center;
         animation: fadeInMenuBox 0.35s cubic-bezier(.39,.575,.565,1.000);
     }
     .nav-menu-ust { margin-bottom: 24px; }
@@ -991,8 +993,8 @@ body {
     .nav-link.nav-anim {
         font-size: 1rem;
         padding: 8px 0;
-        min-width: 120px;
-        width: 90%;
+        min-width: 0;
+        width: 100%;
         text-align: center;
         color: #fff;
         border-radius: 12px;
