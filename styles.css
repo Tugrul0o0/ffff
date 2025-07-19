@@ -975,9 +975,7 @@ body {
         transform: translateY(-50%);
         width: 100vw;
         height: 220px;
-        max-width: 100vw;
-        min-width: 0;
-        background: #1e293b;
+        background: #334155;
         z-index: 120;
         box-shadow: none;
         border-radius: 0;
@@ -993,8 +991,8 @@ body {
         text-align: center;
         color: #fff;
         border-radius: 14px;
-        background: #2563eb;
-        box-shadow: 0 2px 8px #2563eb33;
+        background: #334155;
+        box-shadow: 0 2px 8px #0002;
         margin: 0;
         transition: background 0.2s, color 0.2s, box-shadow 0.2s;
         font-weight: 500;
@@ -1005,7 +1003,7 @@ body {
         justify-content: center;
     }
     .nav-link.nav-anim:hover, .nav-link.nav-anim.active {
-        background: #1d4ed8;
+        background: #2563eb;
         color: #fff;
         box-shadow: 0 4px 18px #2563eb44;
     }
