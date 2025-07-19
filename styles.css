@@ -466,15 +466,6 @@ body {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.fade-in {
-  animation: fadeIn 1s cubic-bezier(.39,.575,.565,1.000) both;
-}
-.pop-in {
-  animation: popIn 0.7s cubic-bezier(.39,.575,.565,1.000) both;
-}
-.slide-up {
-  animation: slideUp 1s cubic-bezier(.39,.575,.565,1.000) both;
-}
 /* Navbar animasyonu */
 .navbar { animation: fadeIn 1.2s; }
 /* Başlıklar animasyonu */
@@ -513,6 +504,68 @@ body {
 .gallery-item:nth-child(6) { animation-delay: 0.6s; }
 /* Footer animasyonu */
 .footer { animation: fadeIn 1.5s; }
+/* Hero video arka planı */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+.hero-bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    z-index: 0;
+    opacity: 0.55;
+    pointer-events: none;
+}
+.hero-content, .hero-stats { position: relative; z-index: 1; }
+
+/* Navbar link animasyonları ve font değişimi */
+.nav-link.nav-anim {
+    transition: color 0.2s, font-weight 0.2s, font-size 0.2s, background 0.2s, box-shadow 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+.nav-link.nav-anim:hover, .nav-link.nav-anim:focus {
+    color: #fff;
+    background: #2563eb;
+    font-weight: 700;
+    font-size: 1.08em;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.13);
+    text-shadow: 0 2px 8px #1d4ed8aa;
+}
+.nav-link.nav-anim.active {
+    color: #fff;
+    background: #1d4ed8;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+}
+
+/* Stat number counter animasyonu ve fontu */
+.stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    animation: popIn 1.2s;
+}
+
+/* Fade-in ve slide-up animasyonları daha belirgin */
+.fade-in {
+    animation: fadeIn 1.2s cubic-bezier(.39,.575,.565,1.000) both;
+}
+.slide-up {
+    animation: slideUp 1.2s cubic-bezier(.39,.575,.565,1.000) both;
+}
+
+/* Hakkımızda ve diğer fade-in class'lı bölümler için animasyon */
+.about.fade-in, .services.fade-in, .gallery.fade-in, .contact.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s cubic-bezier(.39,.575,.565,1.000) both;
+    animation-delay: 0.2s;
+}
 @media (max-width: 900px) {
     .about-content { flex-direction: column; gap: 20px; }
     .hero-title { font-size: 2rem; }

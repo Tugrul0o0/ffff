@@ -21,19 +21,19 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar fade-in">
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-parachute-box"></i>
                 <span>Uçmakdere Paraşüt</span>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Ana Sayfa</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">Hakkımızda</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Hizmetler</a></li>
-                <li class="nav-item"><a href="#gallery" class="nav-link">Galeri</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">İletişim</a></li>
-                <li class="nav-item"><a href="reservation.html" class="nav-link booking-btn">Rezervasyon</a></li>
+                <li class="nav-item"><a href="#home" class="nav-link nav-anim" data-nav="home">Ana Sayfa</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link nav-anim" data-nav="about">Hakkımızda</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link nav-anim" data-nav="services">Hizmetler</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link nav-anim" data-nav="gallery">Galeri</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link nav-anim" data-nav="contact">İletişim</a></li>
+                <li class="nav-item"><a href="reservation.html" class="nav-link nav-anim booking-btn" data-nav="reservation">Rezervasyon</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -44,22 +44,34 @@
     </nav>
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content fade-in">
             <h1 class="hero-title"><span class="highlight">Uçmakdere</span>'de<br>Gökyüzünün Keyfini Çıkarın</h1>
             <p class="hero-subtitle">Tekirdağ'ın en güvenli ve profesyonel yamaç paraşütü deneyimi. Deneyimli pilotlarımızla güvenli tandem uçuşlar.</p>
             <div class="hero-buttons">
-                <a href="#booking" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Hemen Rezervasyon Yap</a>
-                <a href="#services" class="btn btn-secondary"><i class="fas fa-info-circle"></i>Hizmetlerimizi Keşfet</a>
+                <a href="reservation.html" class="btn btn-primary"> <i class="fas fa-calendar-check"></i>Hemen Rezervasyon Yap</a>
+                <a href="#services" class="btn btn-secondary"> <i class="fas fa-info-circle"></i>Hizmetlerimizi Keşfet</a>
             </div>
         </div>
         <div class="hero-stats">
-            <div class="stat-item"><div class="stat-number">5000+</div><div class="stat-label">Başarılı Uçuş</div></div>
-            <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Yıl Deneyim</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Güvenlik</div></div>
+            <div class="stat-item">
+                <div class="stat-number counter" data-target="5000">0</div>
+                <div class="stat-label">Başarılı Uçuş</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number counter" data-target="15">0</div>
+                <div class="stat-label">Yıl Deneyim</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number counter" data-target="100">0</div>
+                <div class="stat-label">Güvenlik</div>
+            </div>
         </div>
     </section>
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
         <div class="container">
             <div class="section-header">
                 <h2>Hakkımızda</h2>
@@ -86,7 +98,7 @@
         </div>
     </section>
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services" class="services fade-in">
         <div class="container">
             <div class="section-header">
                 <h2>Hizmetlerimiz</h2>
@@ -101,7 +113,7 @@
         </div>
     </section>
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery fade-in">
         <div class="container">
             <div class="section-header">
                 <h2>Galeri</h2>
@@ -118,7 +130,7 @@
         </div>
     </section>
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact fade-in">
         <div class="container">
             <div class="section-header">
                 <h2>İletişim</h2>
