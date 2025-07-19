@@ -375,44 +375,89 @@ body {
     align-items: flex-start;
     justify-content: center;
 }
+/* İletişim formu modernizasyonu */
 .contact-form {
     flex: 1;
     min-width: 280px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
     background: #fff;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 28px;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(37,99,235,0.07);
 }
 .contact-form input,
 .contact-form textarea {
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 16px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1.08rem;
     font-family: inherit;
     resize: none;
+    background: #f8fafc;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #2563eb0a;
+    color: #222;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 2px solid #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 2px #2563eb33;
+    background: #fff;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #94a3b8;
+    opacity: 1;
 }
 .contact-form button {
     align-self: flex-end;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #2563eb22;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
+.contact-form button:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 18px #2563eb33;
+    transform: translateY(-2px) scale(1.04);
+}
+/* İletişim bilgi kutusu modernizasyonu */
 .contact-info {
     flex: 1;
     min-width: 220px;
     background: #2563eb;
     color: #fff;
-    border-radius: 15px;
-    padding: 30px 20px;
+    border-radius: 18px;
+    padding: 36px 28px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+    gap: 22px;
+    font-size: 1.13rem;
+    box-shadow: 0 6px 32px rgba(37,99,235,0.09);
+    justify-content: center;
+}
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 }
 .contact-info i {
-    margin-right: 10px;
+    font-size: 1.35em;
+    margin-right: 8px;
+    opacity: 0.92;
 }
 /* Footer */
 .footer {
@@ -593,6 +638,165 @@ body {
     .nav-menu { flex-direction: column; gap: 10px; }
     .hero-title { font-size: 1.3rem; }
     .container { padding: 0 8px; }
-    .services-grid, .gallery-grid { grid-template-columns: 1fr; }
-    .about-placeholder { height: 180px; }
+    .services-grid, .gallery-grid { flex-direction: column; gap: 18px; }
+    .service-card, .gallery-item { max-width: 100%; min-width: 0; }
+    .gallery-placeholder, .service-card { padding: 20px 10px; min-height: 140px; }
+    .about-content, .contact-content { flex-direction: column; gap: 18px; }
+    .contact-form, .contact-info { padding: 18px 8px; border-radius: 12px; }
+    .contact-form input, .contact-form textarea { font-size: 1rem; padding: 14px 10px; }
+    .contact-form button { width: 100%; font-size: 1.1rem; padding: 14px 0; }
+    .footer-content { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .footer-links { gap: 10px; }
+    .stat-number { font-size: 1.3rem; }
+    .stat-label { font-size: 0.98rem; }
+    .faq-section { padding: 0 2px; }
+    #scrollToTopBtn { right: 12px; bottom: 12px; width: 40px; height: 40px; font-size: 1.2rem; }
+} 
+/* Mobil hamburger menü animasyonu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 120;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background: #2563eb;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(.39,.575,.565,1.000);
+}
+.navbar.open .hamburger .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.navbar.open .hamburger .bar:nth-child(2) {
+    opacity: 0;
+}
+.navbar.open .hamburger .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+/* Mobil menü overlay */
+.navbar.open .nav-menu {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30, 41, 59, 0.97);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    z-index: 110;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s;
+    opacity: 1;
+    pointer-events: all;
+    box-shadow: 0 8px 32px #0002;
+}
+.navbar .nav-menu {
+    transition: all 0.3s;
+}
+@media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-menu {
+        display: none;
+    }
+    .navbar.open .nav-menu {
+        display: flex;
+    }
+    .nav-link.nav-anim {
+        font-size: 1.3rem;
+        color: #fff;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 12px 0;
+        transition: color 0.2s, background 0.2s;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: mobileMenuFadeIn 0.4s forwards;
+    }
+    .navbar.open .nav-link.nav-anim {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes mobileMenuFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Yukarı çık butonu */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 18px #2563eb33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+    z-index: 200;
+}
+#scrollToTopBtn.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1.08);
+}
+#scrollToTopBtn:hover {
+    background: #1d4ed8;
+    transform: scale(1.15);
+}
+/* SSS (akordeon) */
+.faq-section {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 16px;
+}
+.faq-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #2563eb11;
+    margin-bottom: 18px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+.faq-question {
+    padding: 20px 24px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2563eb;
+    cursor: pointer;
+    background: #f1f5f9;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    transition: background 0.2s;
+}
+.faq-question:hover {
+    background: #e0e7ef;
+}
+.faq-answer {
+    padding: 0 24px 18px 24px;
+    font-size: 1.05rem;
+    color: #222;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.faq-item.open .faq-answer {
+    display: block;
 } 

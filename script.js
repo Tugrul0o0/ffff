@@ -23,4 +23,38 @@ navLinks.forEach(link => {
     navLinks.forEach(l => l.classList.remove('active'));
     this.classList.add('active');
   });
+});
+
+// Hamburger menü aç/kapa
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+hamburger && hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+});
+// Menüden bir linke tıklanınca menüyü kapat
+const navLinksMobile = document.querySelectorAll('.nav-link.nav-anim');
+navLinksMobile.forEach(link => {
+  link.addEventListener('click', () => {
+    navbar.classList.remove('open');
+  });
+});
+// Yukarı çık butonu
+const scrollBtn = document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add('show');
+  } else {
+    scrollBtn.classList.remove('show');
+  }
+});
+scrollBtn && scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+// SSS (FAQ) akordeon
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.parentElement;
+    item.classList.toggle('open');
+  });
 }); 
