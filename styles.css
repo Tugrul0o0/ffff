@@ -811,3 +811,30 @@ body {
 .faq-item.open .faq-answer {
     display: block;
 } 
+/* Sadece popüler kartta mavi border */
+.service-card.popular {
+    border: 2px solid #2563eb;
+}
+.service-card {
+    border: none;
+}
+@media (max-width: 600px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+    .service-card {
+        width: 90%;
+        max-width: 400px;
+        min-width: 0;
+        margin: 0 auto;
+        padding: 18px 8px;
+        border-radius: 16px;
+        box-sizing: border-box;
+    }
+    .service-card h3 { font-size: 1.1rem; }
+    .service-card p, .service-features, .service-features li { font-size: 0.98rem; }
+    .service-price { font-size: 1.08rem; }
+    .btn { font-size: 1rem; padding: 10px 0; width: 100%; }
+} 
