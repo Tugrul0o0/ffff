@@ -847,11 +847,11 @@ body {
         width: 100%;
     }
     .service-card {
-        width: 98%;
-        max-width: 500px;
+        width: 96%;
+        max-width: 340px;
         min-width: 0;
-        margin: 0 auto 24px auto;
-        padding: 18px 8px 22px 8px;
+        margin: 0 auto 32px auto;
+        padding: 12px 6px 16px 6px;
         border-radius: 16px;
         box-sizing: border-box;
         display: flex;
@@ -859,8 +859,15 @@ body {
         align-items: center;
         justify-content: flex-start;
         box-shadow: 0 2px 12px #2563eb11;
+        min-height: 160px;
     }
-    /* Hamburger menü slide-in sidebar */
+    .service-card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .service-card p, .service-features, .service-features li { font-size: 0.93rem; }
+    .service-icon { font-size: 1.7rem; margin-bottom: 8px; }
+    .service-price { font-size: 0.98rem; margin: 8px 0; }
+    .btn { font-size: 0.95rem; padding: 8px 0; width: 100%; }
+    .service-badge { font-size: 0.8rem; top: 8px; right: 8px; }
+    /* Hamburger menü ortada kutu gibi */
     .navbar .nav-menu {
         display: none;
     }
@@ -868,30 +875,31 @@ body {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 80vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
         max-width: 320px;
         background: #1e293b;
         z-index: 120;
-        box-shadow: -4px 0 24px #0002;
-        padding-top: 70px;
-        align-items: flex-start;
-        gap: 8px;
-        animation: slideInMenu 0.35s cubic-bezier(.39,.575,.565,1.000);
+        box-shadow: 0 8px 32px #0003;
+        border-radius: 18px;
+        padding: 32px 0 18px 0;
+        align-items: center;
+        gap: 6px;
+        animation: fadeInMenuBox 0.35s cubic-bezier(.39,.575,.565,1.000);
     }
-    @keyframes slideInMenu {
-        from { right: -100vw; opacity: 0; }
-        to { right: 0; opacity: 1; }
+    @keyframes fadeInMenuBox {
+        from { opacity: 0; transform: translate(-50%, -60%); }
+        to { opacity: 1; transform: translate(-50%, -50%); }
     }
     .nav-link.nav-anim {
         font-size: 1.05rem;
-        padding: 12px 24px;
-        width: 100%;
-        text-align: left;
+        padding: 10px 0;
+        width: 90%;
+        text-align: center;
         color: #fff;
-        border-radius: 0 16px 16px 0;
+        border-radius: 10px;
         transition: background 0.2s, color 0.2s;
     }
     .nav-link.nav-anim:hover, .nav-link.nav-anim.active {
@@ -908,10 +916,4 @@ body {
         pointer-events: all;
     }
     .hamburger { position: absolute; right: 16px; top: 12px; }
-    .service-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
-    .service-card p, .service-features, .service-features li { font-size: 0.97rem; }
-    .service-icon { font-size: 2.1rem; margin-bottom: 10px; }
-    .service-price { font-size: 1.05rem; margin: 10px 0; }
-    .btn { font-size: 0.98rem; padding: 10px 0; width: 100%; }
-    .service-badge { font-size: 0.85rem; top: 10px; right: 10px; }
 } 
