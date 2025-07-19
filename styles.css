@@ -968,7 +968,7 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: auto;
+        min-width: 220px;
         max-width: 90vw;
         background: #1e293b;
         z-index: 120;
@@ -976,12 +976,19 @@ body {
         border-radius: 18px;
         padding: 18px 0;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
         animation: fadeInMenuBox 0.35s cubic-bezier(.39,.575,.565,1.000);
+    }
+    .nav-menu-ust, .nav-menu-alt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
     }
     .nav-link.nav-anim {
         font-size: 1rem;
-        padding: 10px 24px;
+        padding: 8px 18px;
         width: auto;
         min-width: 120px;
         text-align: center;
@@ -996,13 +1003,25 @@ body {
         border: 1.5px solid #23304a;
         display: block;
     }
-    .nav-link.nav-anim + .nav-link.nav-anim { margin-top: 0; }
-    .nav-link.nav-anim br { display: block; margin: 0; }
     .nav-link.nav-anim:hover, .nav-link.nav-anim.active {
         background: #2563eb;
         color: #fff;
         box-shadow: 0 4px 18px #2563eb33;
         border-color: #2563eb;
+    }
+    .hero-buttons {
+        flex-direction: row;
+        gap: 12px;
+        margin-bottom: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        font-size: 0.98rem;
+        padding: 8px 18px;
+        min-width: 0;
+        width: auto;
+        white-space: nowrap;
     }
     /* Menü overlay */
     .navbar.open::after {
