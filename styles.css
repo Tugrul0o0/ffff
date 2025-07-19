@@ -662,6 +662,26 @@ body {
     .stat-label { font-size: 0.98rem; }
     .faq-section { padding: 0 2px; }
     #scrollToTopBtn { right: 12px; bottom: 12px; width: 40px; height: 40px; font-size: 1.2rem; }
+    .hero-stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin-top: 18px;
+    }
+    .hero-stats-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+        width: 100%;
+    }
+    .stat-item {
+        text-align: center;
+        min-width: 90px;
+    }
+    .stat-number { font-size: 1.1rem; }
+    .stat-label { font-size: 0.95rem; }
 } 
 /* Mobil hamburger menü animasyonu */
 .hamburger {
@@ -823,14 +843,14 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 28px;
+        gap: 0;
         width: 100%;
     }
     .service-card {
         width: 98%;
         max-width: 500px;
         min-width: 0;
-        margin: 0 auto;
+        margin: 0 auto 24px auto;
         padding: 18px 8px 22px 8px;
         border-radius: 16px;
         box-sizing: border-box;
@@ -840,6 +860,54 @@ body {
         justify-content: flex-start;
         box-shadow: 0 2px 12px #2563eb11;
     }
+    /* Hamburger menü slide-in sidebar */
+    .navbar .nav-menu {
+        display: none;
+    }
+    .navbar.open .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 80vw;
+        max-width: 320px;
+        background: #1e293b;
+        z-index: 120;
+        box-shadow: -4px 0 24px #0002;
+        padding-top: 70px;
+        align-items: flex-start;
+        gap: 8px;
+        animation: slideInMenu 0.35s cubic-bezier(.39,.575,.565,1.000);
+    }
+    @keyframes slideInMenu {
+        from { right: -100vw; opacity: 0; }
+        to { right: 0; opacity: 1; }
+    }
+    .nav-link.nav-anim {
+        font-size: 1.05rem;
+        padding: 12px 24px;
+        width: 100%;
+        text-align: left;
+        color: #fff;
+        border-radius: 0 16px 16px 0;
+        transition: background 0.2s, color 0.2s;
+    }
+    .nav-link.nav-anim:hover, .nav-link.nav-anim.active {
+        background: #2563eb;
+        color: #fff;
+    }
+    /* Menü overlay */
+    .navbar.open::after {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(30,41,59,0.45);
+        z-index: 110;
+        pointer-events: all;
+    }
+    .hamburger { position: absolute; right: 16px; top: 12px; }
     .service-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
     .service-card p, .service-features, .service-features li { font-size: 0.97rem; }
     .service-icon { font-size: 2.1rem; margin-bottom: 10px; }
