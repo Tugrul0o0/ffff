@@ -453,6 +453,66 @@ body {
     color: #cbd5e1;
     opacity: 0.85;
 }
+/* Animasyonlar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 1s cubic-bezier(.39,.575,.565,1.000) both;
+}
+.pop-in {
+  animation: popIn 0.7s cubic-bezier(.39,.575,.565,1.000) both;
+}
+.slide-up {
+  animation: slideUp 1s cubic-bezier(.39,.575,.565,1.000) both;
+}
+/* Navbar animasyonu */
+.navbar { animation: fadeIn 1.2s; }
+/* Başlıklar animasyonu */
+.section-header h2, .hero-title { animation: fadeIn 1.2s; }
+/* Hizmet kartları animasyonu */
+.service-card { opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.2s; }
+.service-card:nth-child(2) { animation-delay: 0.4s; }
+.service-card:nth-child(3) { animation-delay: 0.6s; }
+.service-card:nth-child(4) { animation-delay: 0.8s; }
+.service-card:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 12px 32px rgba(37,99,235,0.13);
+  transition: all 0.3s cubic-bezier(.39,.575,.565,1.000);
+}
+/* Buton animasyonları */
+.btn, .booking-btn {
+  transition: transform 0.18s cubic-bezier(.39,.575,.565,1.000), box-shadow 0.18s;
+}
+.btn:hover, .booking-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+.btn:active, .booking-btn:active {
+  transform: scale(0.97);
+}
+/* Galeri animasyonu */
+.gallery-item {
+  opacity: 0;
+  animation: slideUp 1s forwards;
+}
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+/* Footer animasyonu */
+.footer { animation: fadeIn 1.5s; }
 @media (max-width: 900px) {
     .about-content { flex-direction: column; gap: 20px; }
     .hero-title { font-size: 2rem; }
