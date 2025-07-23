@@ -1096,3 +1096,57 @@ body {
     .gallery-placeholder h4 { font-size: 0.97rem; margin-bottom: 5px; }
     .gallery-placeholder p { font-size: 0.91rem; }
 } 
+/* Modern fade-in ve slide animasyonları */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.fade-in-up { animation: fadeInUp 1.1s cubic-bezier(.39,.575,.565,1.000) both; }
+.fade-in-left { animation: fadeInLeft 1.1s cubic-bezier(.39,.575,.565,1.000) both; }
+.fade-in-right { animation: fadeInRight 1.1s cubic-bezier(.39,.575,.565,1.000) both; }
+.pop-in { animation: popIn 0.8s cubic-bezier(.39,.575,.565,1.000) both; }
+
+/* Galeri özel düzeni */
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: center;
+}
+.gallery-row.reverse { flex-direction: row-reverse; }
+.gallery-img {
+  flex: 1 1 320px;
+  max-width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #2563eb22;
+  overflow: hidden;
+  margin: 0 18px;
+  animation: fadeInLeft 1.1s;
+}
+.gallery-desc {
+  flex: 1 1 320px;
+  min-width: 220px;
+  font-size: 1.15rem;
+  color: #1d4ed8;
+  font-weight: 600;
+  padding: 18px 0;
+  animation: fadeInRight 1.1s;
+}
+@media (max-width: 900px) {
+  .gallery-row, .gallery-row.reverse { flex-direction: column !important; gap: 18px; }
+  .gallery-img, .gallery-desc { max-width: 98vw; }
+} 
